@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Cat - Podniebne Autostrady dla Kotów</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> <main id="app">
+  <section id="hero">
+    <div class="hero-content">
+    <h1>Twój salon to dla niego cały świat!</h1>
+    <p class="hero-subtitle">
+      Modularne systemy ścienne, które zmieniają mieszkanie w autostradę dla kota.
+    </p>
+      <div class="hero-carousel">
+        <div class="slide active">
+          <p>Zmień ścianę w plac zabaw.</p>
+        </div>
+        <div class="slide">
+          <p>Odzyskaj swoją kanapę - daj kotu własny taras</p>
+        </div>
+      </div>
+      <button class="cta" id="hero-cta-main" data-location="hero">Sprawdź systemy</button>
+    </div>
+  </section>
+  <section id="video-benefits">
+    <h2>Instynkt łowcy w Twoim domu</h2>
+    <p>Krótki film pokazujący, jak dynamicznie kot przemieszcza się po meblach ściennych, poprawia swoją sprawność i obserwuje domowników z wysokości.</p>
+
+    <div class="video-wrapper">
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/gWEN1XoE5NE"
+              title="Vertical Cat - Zalety produktu"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>
+    <button class="cta" onclick="scrollToForm()" data-location="video">Chcę żeby mój kot też się tak dobrze bawił!</button>
+  </section>
+
+  <section id="features">
+    <h2>Dlaczego Vertical Cat?</h2>
+    <ul class="features-list">
+      <li><strong>Oszczędność miejsca:</strong> Wykorzystujesz ściany, a nie podłogę – idealne do małych mieszkań.</li>
+      <li><strong>Bezpieczeństwo:</strong> Wytrzymałość do 15 kg (nawet dla dużego Maine Coona).</li>
+      <li><strong>Design:</strong> Wykonane z litego drewna dębowego, pasują do wnętrz w stylu loft i skandynawskim.</li>
+      <li><strong>Zdrowie:</strong> Zapobiega otyłości i nudzie u kotów niewychodzących.</li>
+    </ul>
+
+    <button class="cta" onclick="scrollToForm()">Chcę taką ścianę!</button>
+  </section>
+
+  <section id="testimonials">
+    <h2>Opinie naszych klientów</h2>
+
+    <div class="testimonials-container">
+      <div class="testimonials-wrapper">
+
+    <div class="testimonial">
+      <p>"Mój kot w końcu przestał drapać kanapę. Teraz całe dnie spędza na swojej 'autostradzie' pod sufitem."</p>
+      <span>– Anna, właścicielka Luny</span>
+    </div>
+
+        <div class="testimonial">
+          <p>"Możliwość oglądania 'podwozia' śpiącego mruczka przez przezroczystą kopułę to najlepsza rzecz na świecie! Solidne i bezpieczne."</p>
+          <span>– Magda i jej kotek Marek</span>
+        </div>
+
+    <div class="testimonial">
+      <p>"Montaż był dziecinnie prosty, a efekt wizualny w salonie jest lepszy niż przy jakichkolwiek obrazach."</p>
+      <span>– Tomasz z Krakowa</span>
+    </div>
+
+    <div class="testimonial">
+      <p>"Mój kot spędza w kapsule Sky-Lounge całe dnie. Jakość drewna dębowego jest obłędna – to nie jest zwykły mebel, to dekoracja salonu."</p>
+      <span>– Anna z Warszawy</span>
+    </div>
+
+      </div>
+    </div>
+    <button class="cta" onclick="scrollToForm()">Zadbaj o swojego kota</button>
+  </section>
+
+
+
+  <section id="products">
+    <h2>Wybierz system dla swojego kota</h2>
+
+    <div class="product-grid">
+
+      <!-- PRODUKT 1 -->
+      <div class="product-card">
+        <h3>Stopień Cloud-Walk</h3>
+        <p>Pojedynczy moduł wspinaczkowy z antypoślizgowym filcem. Idealny na start.</p>
+
+        <div class="product-actions">
+          <a href="#details-cloud" class="details-link" data-product="cloud-walk">
+            Szczegóły
+          </a>
+          <button class="buy-now" id="buy-cloud-walk" data-product="cloud-walk">Kup teraz</button>
+        </div>
+      </div>
+
+      <!-- PRODUKT 2 -->
+      <div class="product-card">
+        <h3>Zestaw Sky-Lounge</h3>
+        <p>Kompletny system: 3 stopnie, mostek wiszący i kapsuła do spania.</p>
+
+        <div class="product-actions">
+          <a href="#details-sky" class="details-link" data-product="sky-lounge">
+            Szczegóły
+          </a>
+
+          <button class="buy-now" id="buy-sky-lounge" data-product="sky-lounge">Kup teraz</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="details">
+    <h2>Poznaj nasze rozwiązania</h2>
+
+    <div id="details-cloud" class="details-item">
+      <div class="details-image">
+        <img src="src/assets/images/cloud-walk.png" alt="Stopień Cloud-Walk detal">
+      </div>
+      <div class="details-text">
+        <h3>Stopień Cloud-Walk – Precyzja i Komfort</h3>
+        <p>Minimalistyczny stopień ścienny wykonany z litego drewna dębowego. Każdy element jest ręcznie szlifowany, aby zapewnić aksamitną gładkość, a antypoślizgowy filc gwarantuje pewny krok nawet podczas szalonych biegów pod sufitem.</p>
+        <ul class="mini-specs">
+          <li> Naturalny dąb</li>
+          <li> Filc odporny na drapanie</li>
+          <li> Ukryty system montażu</li>
+        </ul>
+        <button class="cta" onclick="scrollToForm()">Kup teraz</button>
+      </div>
+    </div>
+
+    <div id="details-sky" class="details-item reverse">
+      <div class="details-image">
+        <img src="src/assets/images/sky-lounge.png" alt="Zestaw Sky-Lounge detal">
+      </div>
+      <div class="details-text">
+        <h3>Zestaw Sky-Lounge - Twój Kot w Chmurach</h3>
+        <p>Rozbudowany system umożliwiający kotu bezpieczną obserwację terytorium z najwyższego punktu w pokoju. Przeszklona kapsuła pozwala na podglądanie "podwozia" śpiącego mruczka, co jest ulubioną rozrywką właścicieli.</p>
+        <ul class="mini-specs">
+          <li> Akrylowa, bezpieczna kopuła</li>
+          <li> Elastyczny mostek wiszący</li>
+          <li> Miękka poduszka w zestawie</li>
+        </ul>
+        <button class="cta" onclick="scrollToForm()">Kup teraz</button>
+      </div>
+    </div>
+  </section>
+  <section id="contact-form">
+    <div class="form-container">
+      <h2>Zaprojektuj podniebną trasę dla swojego kota</h2>
+      <p>Zostaw dane, a nasz projektant odezwie się, by przygotować darmową wizualizację Twojej ściany.</p>
+
+      <form id="adoption-form">
+        <div class="form-group">
+          <label for="name">Imię i nazwisko</label>
+          <input type="text" id="name" name="name" placeholder="Np. Anna Kowalska" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" placeholder="123 456 789" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Treść (ile masz kotów i jak dużą ścianę?)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Opisz swoje potrzeby..."></textarea>
+        </div>
+
+        <div class="legal-info">
+          <p>
+            Administratorem Twoich danych osobowych jest <strong>Vertical Cat Design sp. z o.o.</strong>.
+            Dane przetwarzane są w celu kontaktu i przygotowania oferty.
+            Wysyłając formularz, akceptujesz naszą politykę prywatności.
+          </p>
+        </div>
+
+        <button type="submit" class="cta">Wyślij zgłoszenie</button>
+      </form>
+    </div>
+  </section>
+
+
+</main></body>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

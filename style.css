@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html, h1, h2, h3, p, span, li, button, input, textarea, a {
+    font-family: 'Google Sans', sans-serif !important;
+    margin-bottom: 25px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+p, li, label {
+    font-weight: 400;
+}
+
+.cta, .buy-now {
+    font-weight: 600;
+}
+:root {
+    --primary: #ff914d;
+    --bg-light: #fafaf9;
+    --text-dark: #2d2d2d;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+#hero {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%),
+    url("./src/assets/images/background-cat-vertical.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    background: transparent;
+    padding: 20px;
+}
+
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-carousel {
+    position: relative;
+    min-height: 120px;
+    margin-top: 20px;
+    font-size: 2rem;
+    overflow: hidden; /* Zapobiega wystawaniu tekstu podczas animacji */
+}
+
+.hero-carousel .slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    /* Dodajemy przesunięcie w dół (translateY) */
+    transform: translateY(30px);
+    /* Płynne przejście dla obu właściwości */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    display: block !important;
+    visibility: hidden;
+}
+
+.hero-carousel .slide.active {
+    opacity: 1;
+    visibility: visible;
+    /* Wracamy na pierwotną pozycję */
+    transform: translateY(0);
+}
+
+.cta {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #ff914d;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#products {
+    padding: 80px 40px;
+    background: #f7f7f7;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+}
+
+.product-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-link {
+    color: #555;
+    text-decoration: underline;
+}
+
+.buy-now {
+    background: #ff914d;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+#video-benefits, #features, #testimonials {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+
+.testimonials-container {
+    width: 100%;
+    overflow-x: auto; /* Pozwala na przewijanie w poziomie */
+    padding: 40px 0;
+    cursor: grab;
+    /* Ukrywamy pasek przewijania, żeby było estetyczniej */
+    scrollbar-width: none;
+}
+
+.testimonials-container::-webkit-scrollbar {
+    display: none; /* Ukrycie paska w Chrome/Safari */
+}
+
+.testimonials-wrapper {
+    display: flex;
+    gap: 30px; /* Odstęp między opiniami */
+    padding: 0 20px;
+    /* Scroll Snap sprawia, że opinia "wskakuje" idealnie na środek po przesunięciu */
+    scroll-snap-type: x mandatory;
+}
+
+.testimonial {
+    flex: 0 0 350px; /* Szerokość jednej karty opinii */
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+#contact-form {
+    padding: 100px 20px;
+    background: #fdfdfd;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.form-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-container p {
+    margin-bottom: 30px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ważne, by inputy nie wystawały */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff914d;
+    box-shadow: 0 0 0 3px rgba(255, 145, 77, 0.1);
+}
+
+.legal-info {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 20px 0;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.form-container .cta {
+    width: 100%; /* Przycisk na całą szerokość formularza */
+}
+
+#details {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#details h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+}
+
+.details-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+/* Odwrócenie kolejności co drugiego elementu */
+.details-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.details-image {
+    border-radius: 30px; /* Większe zaokrąglenia wyglądają bardziej "designersko" */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.details-image img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.details-item:hover .details-image img {
+    transform: scale(1.08); /* Delikatne przybliżenie przy najechaniu */
+}
+
+.details-text h3 {
+    font-size: 2.2rem;
+    color: #222;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.details-text h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff914d;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.features-list {
+    list-style: none; /* Usuwamy standardowe kropki */
+    padding: 0;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 40px; /* Robimy miejsce na łapkę */
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Tworzymy własny znacznik łapki */
+.features-list li::before {
+    content: '🐾'; /* Ikona łapki */
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: #ff914d; /* Twój kolor przewodniczy */
+    transition: transform 0.3s ease;
+}
+
+/* Efekt pro - łapka lekko się porusza, gdy najedziesz na punkt */
+.features-list li:hover::before {
+    transform: rotate(-20deg) scale(1.3);
+}
+
+
+
+/* Efekt unoszenia się kart produktów */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.mini-specs {
+    list-style: none; /* Usuwa standardowe kropki */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.mini-specs li {
+    position: relative;
+    padding-left: 35px; /* Miejsce na łapkę */
+    margin-bottom: 12px;
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.mini-specs li::before {
+    content: '🐾'; /* Wstawia łapkę automatycznie */
+    position: absolute;
+    left: 0;
+    color: #ff914d; /* Kolor pomarańczowy */
+    font-size: 1.2rem;
+    /* Delikatne przesunięcie, żeby łapka była idealnie na środku wysokości linii */
+    line-height: 1;
+}
+
+/* Opcjonalnie: efekt po najechaniu na punkt listy */
+.mini-specs li:hover::before {
+    transform: scale(1.2) rotate(-10deg);
+    transition: transform 0.2s ease;
+}
