@@ -1,3 +1,51 @@
+// --- ZGODY I CONSENT MODE V2 ---
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+
+// 1. Ustawienie domyślnych zgód (wszystko na denied)
+if (!localStorage.getItem('cookieConsent')) {
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_ads_personalization': 'denied',
+        'analytics_storage': 'denied'
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // 2. Pokaż baner tylko jeśli nie ma jeszcze decyzji w localStorage
+    if (!localStorage.getItem('cookieConsent')) {
+        banner.style.display = 'flex'; // Tutaj JS go aktywuje
+    }
+
+    // 3. Obsługa przycisku ZGODA
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_ads_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+            localStorage.setItem('cookieConsent', 'granted');
+            banner.style.display = 'none'; // Teraz zadziała, bo w CSS nie ma !important
+            console.log('Zgoda udzielona');
+        });
+    }
+
+    // 4. Obsługa przycisku ODMOWA
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'denied');
+            banner.style.display = 'none';
+            console.log('Odmowa cookies');
+        });
+    }
+});
 // --- KARUZELA W HERO ---
 function setupHeroCarousel() {
   const slides = document.querySelectorAll('.hero-carousel .slide');
