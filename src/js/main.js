@@ -2,27 +2,17 @@
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 
-// 1. Ustawienie domyślnych zgód (wszystko na denied)
-if (!localStorage.getItem('cookieConsent')) {
-    gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_ads_personalization': 'denied',
-        'analytics_storage': 'denied'
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('accept-cookies');
     const declineBtn = document.getElementById('decline-cookies');
 
-    // 2. Pokaż baner tylko jeśli nie ma jeszcze decyzji w localStorage
+    // Pokaż baner tylko jeśli nie ma jeszcze decyzji w localStorage
     if (!localStorage.getItem('cookieConsent')) {
         banner.style.display = 'flex'; // Tutaj JS go aktywuje
     }
 
-    // 3. Obsługa przycisku ZGODA
+    // Obsługa przycisku ZGODA
     if (acceptBtn) {
         acceptBtn.addEventListener('click', () => {
             gtag('consent', 'update', {
