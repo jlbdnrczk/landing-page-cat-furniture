@@ -2,6 +2,8 @@
 
 Nowoczesna i responsywna strona typu Landing Page stworzona dla marki oferującej luksusowe meble ścienne dla kotów. Projekt skupia się na estetyce, przejrzystości oraz funkcjonalnościach wspierających konwersję.
 
+Strona udostępniona jest na GitHub Pages: https://jlbdnrczk.github.io/landing-page-cat-furniture
+
 ## ✨ Kluczowe Funkcjonalności
 
 * **Hero Section z Karuzelą:** Dynamicznie zmieniające się hasła reklamowe z płynnymi animacjami wejścia.
